@@ -1,0 +1,50 @@
+﻿body {
+    background-color:honeydew;
+}
+
+h1 {
+color:dodgerblue;
+}
+h2 {
+color:dodgerblue;
+}
+.div2 {
+  border-radius: 15%;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  font-size:large;
+  font-weight:500;
+}
+.div {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  font-size:large;
+  font-weight:500;
+  
+}
+.img {
+  border-radius: 15%;
+  width: 100%;
+  height: 150px;
+}
+.img2 {
+  border-radius: 5%;
+  width: 100%;
+  height: 200px;
+}
+.txt {
+    border-radius:5%;
+    width:100%;
+    height:40px;
+}
+.btn
+{
+    color:antiquewhite;
+    border-radius:5%;
+    width:100%;
+    height:40px;
+    font-size:larger;
+    background-color:cornflowerblue;
+}
