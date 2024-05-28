@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSense</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .level {
+            margin: 20px;
+            display: inline-block;
+            border: 2px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+        }
+        .slot {
+            width: 80px;
+            height: 80px;
+            margin: 5px;
+            display: inline-block;
+            border: 2px solid #ccc;
+            background-color: #00ff00; /* Green for available */
+        }
+        .occupied {
+            background-color: #ff0000; /* Red for occupied */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="giphy.gif">
+    <h1>ParkSense</h1>
+
+    <div class="level">
+        <h2>Level 1</h2>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+    </div>
+
+    <div class="level">
+        <h2>Level 2</h2>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+    </div>
+
+    <p>Total Parking Spaces: <span id="totalSpaces">12</span></p>
+    <p>Available Slots: <span id="availableSlots">12</span></p>
+    <p>Occupied Slots: <span id="occupiedSlots">0</span></p>
+
+    <script>
+        function updateSlots() {
+            const totalSpaces = 12; // Total number of parking spaces
+            const occupancyRate = 0.7; // Set the desired occupancy rate (70% occupied in this case)
+            let availableSlots = 0;
+            let occupiedSlots = 0;
+
+            // Simulate changing light in each slot
+            const slots = document.querySelectorAll('.slot');
+            slots.forEach(slot => {
+                const randomOccupied = Math.random() < occupancyRate; // Occupancy rate determines the likelihood of being occupied
+                if (randomOccupied) {
+                    slot.classList.add('occupied');
+                    occupiedSlots++;
+                } else {
+                    slot.classList.remove('occupied');
+                    availableSlots++;
+                }
+            });
+
+            document.getElementById('totalSpaces').textContent = totalSpaces;
+            document.getElementById('availableSlots').textContent = availableSlots;
+            document.getElementById('occupiedSlots').textContent = occupiedSlots;
+        }
+
+        updateSlots(); // Initial update
+        setInterval(updateSlots, 10000); // Refresh every 10 seconds
+    </script>
+
+<marquee direction="down" height="200px" behavior="alternate">
+<marquee scrollamount="20" direction="right" >  <img src="recorded-art-recorded.gif" > </marquee>
+</marquee>
+
+</body>
+</html>
